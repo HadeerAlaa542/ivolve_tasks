@@ -1,4 +1,3 @@
-```md
 # Lab 3: Shell Scripting Basics - Network Ping Scanner  
 
 ## Objective  
