@@ -1,4 +1,7 @@
-```md
+Here's your README file formatted for GitHub preview:  
+
+---
+
 # Lab 2: MySQL Installation and Automated Backup with Cron  
 
 ## Objective  
@@ -14,7 +17,7 @@ The goal of this lab is to:
 
 ## Steps  
 
-### 1️⃣ Install MySQL  
+### 1. Install MySQL  
 Run the following command to install MySQL:  
 ```bash
 sudo apt update && sudo apt install mysql-server -y
@@ -25,14 +28,14 @@ sudo systemctl start mysql
 sudo systemctl enable mysql
 ```
 
-### 2️⃣ Secure MySQL Installation  
+### 2. Secure MySQL Installation  
 Run the security script to set a root password and remove unnecessary settings:  
 ```bash
 sudo mysql_secure_installation
 ```
 Follow the prompts to secure your MySQL instance.  
 
-### 3️⃣ Create a MySQL Backup Script  
+### 3. Create a MySQL Backup Script  
 Create a script at `/usr/local/bin/mysql_backup.sh` to back up all MySQL databases:  
 ```bash
 sudo nano /usr/local/bin/mysql_backup.sh
@@ -66,7 +69,7 @@ Give execution permission:
 sudo chmod +x /usr/local/bin/mysql_backup.sh
 ```
 
-### 4️⃣ Schedule the Cron Job  
+### 4. Schedule the Cron Job  
 Edit the cron jobs using:  
 ```bash
 crontab -e
@@ -77,7 +80,7 @@ Add the following line at the end to run the script **every Sunday at 5:00 PM**:
 ```
 Save and exit.  
 
-### 5️⃣ Verify the Cron Job  
+### 5. Verify the Cron Job  
 List cron jobs to confirm:  
 ```bash
 crontab -l
