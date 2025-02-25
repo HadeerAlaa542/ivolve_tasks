@@ -1,7 +1,3 @@
-Here's your README file formatted for GitHub preview:  
-
----
-
 # Lab 2: MySQL Installation and Automated Backup with Cron  
 
 ## Objective  
