@@ -138,3 +138,6 @@ You should see a page displaying:
 ```
 Welcome to the NGINX Server :)
 ```
+
+![image](https://github.com/user-attachments/assets/2ced950c-26f7-457a-ab63-8848f513d45e)
+
