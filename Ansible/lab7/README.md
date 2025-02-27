@@ -90,7 +90,7 @@ ansible-playbook -i inventory webserver.yml --syntax-check
 Run the playbook to install and configure NGINX:
 
 ```bash
-ansible-playbook -i inventory webserver.yml
+ansible-playbook -i inventory webserver.yml --private-key ~/.ssh/node01key.pem 
 ```
 
 ### 6. Verify NGINX Installation
