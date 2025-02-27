@@ -1,0 +1,28 @@
+---
+- name: Install prerequisites
+  ansible.builtin.apt:
+    name: ["apt-transport-https", "ca-certificates", "curl", "software-properties-common"]
+    state: present
+    update_cache: yes
+
+- name: Add Docker GPG key
+  ansible.builtin.shell: |
+    curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
+
+- name: Add Docker repository
+  ansible.builtin.apt_repository:
+    repo: "deb [arch=amd64 signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu focal stable"
+    state: present
+
+- name: Install Docker
+  ansible.builtin.apt:
+    name: docker-ce
+    state: present
+
+- name: Start and enable Docker service
+  ansible.builtin.service:
+    name: docker
+    state: started
+    enabled: yes
+
+# tasks file for docker

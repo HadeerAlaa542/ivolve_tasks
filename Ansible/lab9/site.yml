@@ -1,0 +1,6 @@
+---
+- name: Ansible role for installing Jenkins, Docker, and OpenShift CLI
+  hosts: node02
+  become: yes
+  roles:
+    - roles
