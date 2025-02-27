@@ -66,15 +66,25 @@ Add the following content:
         state: started
         enabled: yes
 
+    - name: Allow HTTP traffic on port 80
+      ufw:
+        rule: allow
+        port: "80"
+        proto: tcp
+
     - name: Deploy a custom index.html
       copy:
         content: "<h1>Welcome to the NGINX Server</h1>"
         dest: /var/www/html/index.html
+        owner: www-data
+        group: www-data
+        mode: '0644'
 
     - name: Restart NGINX service
       service:
         name: nginx
         state: restarted
+
 ```
 
 ### 4. Run Syntax Check
