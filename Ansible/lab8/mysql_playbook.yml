@@ -1,0 +1,37 @@
+---
+- name: Setup MySQL with Ansible Vault
+  hosts: node02
+  become: yes
+  vars_files:
+    - vault.yml
+
+  tasks:
+    - name: Install MySQL Server
+      ansible.builtin.apt:
+        name:
+          - mysql-server
+          - python3-pymysql  # Required Python library for MySQL
+        state: present
+        update_cache: yes
+
+    - name: Ensure MySQL service is running
+      ansible.builtin.service:
+        name: mysql
+        state: started
+        enabled: yes
+
+    - name: Create MySQL database
+      community.mysql.mysql_db:
+        name: ivolvedatabase
+        state: present
+        login_unix_socket: /var/run/mysqld/mysqld.sock
+
+    - name: Create MySQL user with privileges
+      community.mysql.mysql_user:
+        name: "{{ db_user }}"
+        password: "{{ db_password }}"
+        priv: "iyoyledatabase.*:ALL"
+        host: "%"
+        state: present
+        login_unix_socket: /var/run/mysqld/mysqld.sock
+
