@@ -3,4 +3,6 @@
   hosts: node02
   become: yes
   roles:
-    - roles
+    - docker
+    - jenkins
+    - openshift
