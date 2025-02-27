@@ -31,8 +31,8 @@ vim inventory
 Add the following content:
 
 ```
-[nodes]
-node01.example.com ansible_host=3.87.52.183 ansible_user=ubuntu
+node02 ansible_host=184.72.118.157   ansible_user=ubuntu
+
 ```
 
 ### 3. Write the Ansible Playbook
@@ -136,5 +136,5 @@ http://<managed_node_IP>
 You should see a page displaying:
 
 ```
-Welcome to the NGINX Server
+Welcome to the NGINX Server :)
 ```
