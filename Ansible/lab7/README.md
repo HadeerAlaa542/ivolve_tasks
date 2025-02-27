@@ -48,7 +48,7 @@ Add the following content:
 ```yaml
 ---
 - name: Install and Configure NGINX on Ubuntu
-  hosts: node01.example.com
+  hosts: node02
   become: yes
   tasks:
     - name: Update package list
@@ -66,24 +66,40 @@ Add the following content:
         state: started
         enabled: yes
 
-    - name: Allow HTTP traffic on port 80
-      ufw:
-        rule: allow
-        port: "80"
-        proto: tcp
-
     - name: Deploy a custom index.html
       copy:
-        content: "<h1>Welcome to the NGINX Server</h1>"
+        content: "<h1>Welcome to the NGINX Server :) </h1>"
         dest: /var/www/html/index.html
-        owner: www-data
-        group: www-data
-        mode: '0644'
+
+    - name: Ensure UFW is installed
+      apt:
+        name: ufw
+        state: present
+
+    - name: Enable UFW firewall
+      ufw:
+        state: enabled
+
+    - name: Allow SSH to prevent lockout
+      ufw:
+        rule: allow
+        name: OpenSSH
+
+    - name: Allow traffic on port 80 from anywhere
+      ufw:
+        rule: allow
+        port: '80'
+        proto: tcp
+        from: any
+
+    - name: Reload UFW firewall
+      command: ufw reload
 
     - name: Restart NGINX service
       service:
         name: nginx
         state: restarted
+
 
 ```
 
