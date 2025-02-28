@@ -1,4 +1,4 @@
-Lab9: Ansible Roles for Application Deployment
+# Lab 9: Ansible Roles for Application Deployment
 
 ## Objective
 This project organizes Ansible playbooks using roles. It includes Ansible roles for installing Jenkins, Docker, and OpenShift CLI (`oc`) on a remote Ubuntu server.
