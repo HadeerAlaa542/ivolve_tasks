@@ -149,10 +149,10 @@ Edit `roles/openshift/tasks/main.yml`:
 ### 7. Deploy the Roles Using Ansible
 Run the following command to execute the playbook:
 ```bash
-ansible-playbook -i inventory site.yml
+ansible-playbook -i inventory site.yml --private-key ~/.ssh/node01key.pem
 ```
 
-### 8. Verify Installations
+### 8. Verify Installations on the managed node02
 - **Jenkins:**
   ```bash
   systemctl status jenkins
@@ -168,5 +168,5 @@ ansible-playbook -i inventory site.yml
   ```bash
   oc version
   ```
-  output 
-![image](https://github.com/user-attachments/assets/d6ac2ea0-7efb-4292-a97c-a2659d67bed1)
+- **output**
+- ![image](https://github.com/user-attachments/assets/d6ac2ea0-7efb-4292-a97c-a2659d67bed1)
