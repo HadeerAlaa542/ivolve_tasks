@@ -1,22 +1,23 @@
 ---
 - name: Download OpenShift CLI
-  ansible.builtin.get_url:
+  get_url:
     url: "https://mirror.openshift.com/pub/openshift-v4/clients/oc/latest/linux/oc.tar.gz"
     dest: "/tmp/oc.tar.gz"
+  become: yes
 
 - name: Extract OpenShift CLI
-  ansible.builtin.unarchive:
+  unarchive:
     src: "/tmp/oc.tar.gz"
-    dest: "/usr/local/bin"
+    dest: "/usr/local/bin/"
     remote_src: yes
+  become: yes
 
-- name: Verify OC installation
-  ansible.builtin.command: oc version
+- name: Verify OpenShift CLI Installation
+  command: oc version
   register: oc_version
-  changed_when: false
 
-- name: Display OC version
-  ansible.builtin.debug:
+- name: Display OpenShift CLI Version
+  debug:
     msg: "{{ oc_version.stdout }}"
 
 # tasks file for openshift
