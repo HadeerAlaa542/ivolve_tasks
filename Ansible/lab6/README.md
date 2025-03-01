@@ -71,3 +71,5 @@ node01.example.com | SUCCESS => {
     "ping": "pong"
 }
 ```
+### Output**
+![image](https://github.com/user-attachments/assets/84a1a846-5394-4e08-81a2-dd840a2af432)
