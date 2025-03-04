@@ -47,9 +47,6 @@
      ssh -i path/to/your-key.pem ec2-user@<private-instance-private-IP>
      ```
 
----
-
-This README lists the essential steps required to meet the lab’s objectives.
 ### Output
 <img width="402" alt="image" src="https://github.com/user-attachments/assets/d34cf19a-f10d-4616-9167-589c99cfb2c1" />
 <br>
