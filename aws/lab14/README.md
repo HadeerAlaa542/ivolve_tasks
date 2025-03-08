@@ -74,8 +74,6 @@ aws s3 cp testfile.txt s3://ha542-bucket/
 ```
 <img width="300" alt="image" src="https://github.com/user-attachments/assets/0b85b772-c359-4e39-a41b-4c833b4f4cfb" />
 
-![image](https://github.com/user-attachments/assets/d112a793-3c8f-4295-9f13-3eab53a111d2)
-
 #### 9.2 List All Versions
 ```sh
 aws s3api list-object-versions --bucket ha542-bucket
