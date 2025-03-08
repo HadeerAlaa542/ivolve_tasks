@@ -68,8 +68,6 @@ aws s3api get-bucket-versioning --bucket ha542-bucket
 echo "Updated content!" > testfile.txt
 aws s3 cp testfile.txt s3://ha542-bucket/
 ```
-![image](https://github.com/user-attachments/assets/d112a793-3c8f-4295-9f13-3eab53a111d2)
-
 #### 9.2 List All Versions
 ```sh
 aws s3api list-object-versions --bucket ha542-bucket
