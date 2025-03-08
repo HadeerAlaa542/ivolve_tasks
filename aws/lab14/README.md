@@ -83,7 +83,7 @@ aws s3api list-object-versions --bucket ha542-bucket
 <img width="423" alt="image" src="https://github.com/user-attachments/assets/4db187c5-aecb-4db8-8e3b-388cac532e2f" />
 
 ![image](https://github.com/user-attachments/assets/66295d6f-faf7-4dd5-ae89-340f49f1b137)
-![image](https://github.com/user-attachments/assets/67b74dcd-aa82-450e-93cf-ae6a3b23e39c)
+<img width="960" alt="image" src="https://github.com/user-attachments/assets/7267851b-88a3-4f96-8194-96bfe4ede992" />
 <img width="960" alt="image" src="https://github.com/user-attachments/assets/030a1da0-de07-4b49-a234-f43e675a69f5" />
 
 ### 10. Enable Server Access Logging
