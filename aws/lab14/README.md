@@ -35,8 +35,6 @@ aws s3api put-bucket-acl --bucket ha542-bucket --acl public-read
 ```sh
 aws s3api get-bucket-acl --bucket ha542-bucket
 ```
-<img width="725" alt="image" src="https://github.com/user-attachments/assets/02785acc-8ab6-4668-bdfe-c4644eea7145" />
-
 ### 4. Upload a File to S3
 ```sh
 echo "Hello AWS from Lab14!" > testfile.txt
