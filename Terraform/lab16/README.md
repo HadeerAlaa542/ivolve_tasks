@@ -55,8 +55,6 @@ terraform import aws_vpc.main-vpc vpc-03e2f63b6dc5a7eff
 ### Output:
 ![image](https://github.com/user-attachments/assets/9f7307c2-40c5-4d5f-a175-2cdfbec6f45d)
 
-![image](https://github.com/user-attachments/assets/b75b7657-cbb7-4818-aee3-c1efa98ed25c)
-
 ![image](https://github.com/user-attachments/assets/b78d1566-e1fe-4554-91c2-e36cf78692c3)
 
 #### Public and Private Subnets
