@@ -3,7 +3,8 @@
 ## Overview
 
 This lab implements a multi-tier infrastructure using Terraform on AWS Cloud9. The setup includes a manually created VPC imported into Terraform, public and private subnets, an EC2 instance in the public subnet, and an RDS instance in the private subnet. An internet gateway enables external access for the EC2 instance, and a local provisioner is used to store the EC2 public IP in a file.
-   <img width="475" alt="image" src="https://github.com/user-attachments/assets/fe4f8029-8d93-4356-b2f7-353ff7a7f854" />
+
+<img width="475" alt="image" src="https://github.com/user-attachments/assets/fe4f8029-8d93-4356-b2f7-353ff7a7f854" />
 
 ## Prerequisites
 
