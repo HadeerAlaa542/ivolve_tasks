@@ -27,6 +27,7 @@ sudo apt update && sudo apt install terraform -y
 ```
 ### 3. create the vpc manually 
 <img width="639" alt="image" src="https://github.com/user-attachments/assets/dbadd221-72aa-4a20-8165-85c2ed2781de" />
+
 ![image](https://github.com/user-attachments/assets/b78d1566-e1fe-4554-91c2-e36cf78692c3)
 
 ### 3. Write Terraform Configuration
