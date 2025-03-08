@@ -24,6 +24,7 @@ aws s3 mb s3://ha542-bucket
 ```sh
 aws s3 ls
 ```
+<img width="725" alt="image" src="https://github.com/user-attachments/assets/80514268-ad60-4e59-a361-34b07050cf1c" />
 
 ### 3. Configure Bucket Permissions
 #### 3.1 Make the Bucket Public
@@ -34,6 +35,7 @@ aws s3api put-bucket-acl --bucket ha542-bucket --acl public-read
 ```sh
 aws s3api get-bucket-acl --bucket ha542-bucket
 ```
+<img width="725" alt="image" src="https://github.com/user-attachments/assets/02785acc-8ab6-4668-bdfe-c4644eea7145" />
 
 ### 4. Upload a File to S3
 ```sh
