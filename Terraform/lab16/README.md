@@ -179,12 +179,12 @@ terraform plan
 terraform apply -auto-approve
 ```
 ### Output:
-<img width="627" alt="image" src="https://github.com/user-attachments/assets/689c4667-eab9-4b64-a901-058a9914582a" />
-
+![image](https://github.com/user-attachments/assets/ff1258c3-dd22-4fec-8bb8-29e6b0fdb471)
 ### 6. Verify Deployment
 
 - Check the **EC2 Instance** in AWS Console.
-<img width="752" alt="image" src="https://github.com/user-attachments/assets/d8aac252-a421-4bd0-8422-ff2d8415b0db" />
+<img width="627" alt="image" src="https://github.com/user-attachments/assets/689c4667-eab9-4b64-a901-058a9914582a" />
+
 <img width="752" alt="image" src="https://github.com/user-attachments/assets/205c5b89-7f67-4a43-9ece-20156ecf2f15" />
 
 - Verify that **the EC2 IP is stored** in `ec2-ip.txt`.
@@ -192,7 +192,8 @@ terraform apply -auto-approve
 
 - Ensure that RDS is created in the private subnet.
 <img width="751" alt="image" src="https://github.com/user-attachments/assets/39b15079-94e9-4b0c-8c8b-ee276ecb4f06" />
-<img width="752" alt="image" src="https://github.com/user-attachments/assets/289791ba-5ded-4ff8-84db-9fd58a1f34cc" />
+
+<img width="752" alt="image" src="https://github.com/user-attachments/assets/d8aac252-a421-4bd0-8422-ff2d8415b0db" />
 
 ### 7. Destroy Resources
 
