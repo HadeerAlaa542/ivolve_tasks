@@ -1,5 +1,4 @@
-
-# Terraform Lab 16: Multi-Tier Application Deployment
+#### Terraform Lab 16: Multi-Tier Application Deployment
 
 ## Overview
 
