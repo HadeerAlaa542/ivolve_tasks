@@ -47,19 +47,15 @@ This lab focuses on securing an AWS environment by setting up IAM users, groups,
    - **dev-l** (Console and programmatic access, member of developer group).
      ![image](https://github.com/user-attachments/assets/2f18ac37-059f-4aa8-9b3b-f89d0313d9db)
 
-![image](https://github.com/user-attachments/assets/1de2807c-fd24-4976-910b-e79011e2ef21)
-
-
 3. **Enable MFA for admin-l:**
    - Go to **IAM > Users > admin-l > Security Credentials**.
    - Enable MFA using a virtual device (Google Authenticator/Authy).
 
 ### **3. Configure AWS CLI for admin-2 and Create an EC2 Instance**
-1. Install AWS CLI (if not installed):
+1. Install AWS CLI.
    ```bash
    aws --version
    ```
-   If not installed, download from [AWS CLI](https://aws.amazon.com/cli/).
 2. Configure AWS CLI for **admin-2**:
    ```bash
    aws configure
@@ -69,19 +65,19 @@ This lab focuses on securing an AWS environment by setting up IAM users, groups,
    - Choose output format (`json`).
 3. Launch an EC2 instance:
    ```bash
-   aws ec2 run-instances --image-id ami-12345678 --count 1 --instance-type t2.micro --key-name MyKeyPair --security-groups default
+   aws ec2 run-instances --image-id ami-0ff8a915Ø7f77f867 --count 1 --instance-type t2.micro --key-name mykey --security-groups default
    ```
-   - Replace `ami-12345678` with a valid AMI ID.
-   - Replace `MyKeyPair` with a valid key pair.
-4. Verify EC2 instance:
-   ```bash
-   aws ec2 describe-instances
-   ```
+   ![image](https://github.com/user-attachments/assets/b12f7c7e-0a13-4888-955a-ecf0e562ba65)
+
 
 ### **4. Verify dev-l Access to EC2 and S3**
 1. **Log in as dev-l via AWS Console** and ensure:
    - EC2 access is available.
+   ![image](https://github.com/user-attachments/assets/88f8677c-d5a2-467b-9442-966c8ef9e41d)
+
    - S3 access is available.
+     ![image](https://github.com/user-attachments/assets/6ac60138-6856-4331-9e8b-cbc87b7b488f)
+
 
 2. **Verify CLI Access for dev-l**:
    ```bash
@@ -91,13 +87,12 @@ This lab focuses on securing an AWS environment by setting up IAM users, groups,
 3. **Check EC2 Instances and S3 Buckets**:
    ```bash
    aws ec2 describe-instances
+   ```
+   ![image](https://github.com/user-attachments/assets/b99ef9c7-597a-4127-9fc1-d32890c78174)
+  ```bash
    aws s3 ls
    ```
-4. **Take Screenshots**:
-   - EC2 dashboard.
-   - S3 bucket list.
-
----
+   ![image](https://github.com/user-attachments/assets/74c43e8b-e17e-46d8-bda9-f540ebe1e2ca)
 
 ## **Conclusion**
 By completing this lab, you have successfully:
@@ -105,6 +100,4 @@ By completing this lab, you have successfully:
 - Configured AWS CLI for secure access.
 - Used AWS CLI to create and manage AWS resources.
 - Enabled billing alerts to track AWS usage and costs.
-
-✅ **Your AWS environment is now more secure and well-managed!** 🚀
 
