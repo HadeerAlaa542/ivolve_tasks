@@ -35,7 +35,10 @@ This lab focuses on securing an AWS environment by setting up IAM users, groups,
 ### **2. Configure IAM Users and Groups**
 1. **Create IAM Groups:**
    - **admin** group: Assign **AdministratorAccess** policy.
+   ![image](https://github.com/user-attachments/assets/4e37dcb9-c055-41aa-bb04-b18e348175f2)
+
    - **developer** group: Assign **AmazonEC2FullAccess** policy.
+   ![image](https://github.com/user-attachments/assets/545df654-4657-4b17-8e09-0470a5ce7879)
 
 2. **Create IAM Users:**
    - **admin-l** (Console access only, MFA enabled, member of admin group).
