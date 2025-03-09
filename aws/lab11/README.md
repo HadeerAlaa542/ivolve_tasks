@@ -91,11 +91,11 @@ This lab focuses on securing an AWS environment by setting up IAM users, groups,
    ```bash
    aws ec2 describe-instances
    ```
-   ![image](https://github.com/user-attachments/assets/b99ef9c7-597a-4127-9fc1-d32890c78174)
-  ```bash
+    ![image](https://github.com/user-attachments/assets/b99ef9c7-597a-4127-9fc1-d32890c78174)
+   ```bash
    aws s3 ls
    ```
-   ![image](https://github.com/user-attachments/assets/74c43e8b-e17e-46d8-bda9-f540ebe1e2ca)
+    ![image](https://github.com/user-attachments/assets/74c43e8b-e17e-46d8-bda9-f540ebe1e2ca)
 
 ## **Conclusion**
 By completing this lab, you have successfully:
