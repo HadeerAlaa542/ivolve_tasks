@@ -50,7 +50,7 @@ xxxxxxxxxxx   jenkins/jenkins:lts-jdk17   "/usr/bin/tini -- /u…"  X minutes ag
    ```sh
    docker logs jenkins 
    ```
-In the logs, you will see a line similar to the following:   
+   In the logs, you will see a line similar to the following:   
 
    ```  
    Jenkins initial setup is required. An admin user has been created and a password generated.
