@@ -55,6 +55,8 @@ In the logs, you will see a line similar to the following:
    ```  
    Jenkins initial setup is required. An admin user has been created and a password generated.
    Please use the following password to proceed to installation:
+
+   [password]
    ```
 3. Copy the password and paste it into the Jenkins setup page.
 4. Follow the on-screen instructions to complete the installation.
