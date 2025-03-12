@@ -9,13 +9,13 @@ pipeline {
         }
         stage('Docker image') {
             steps {
-				        withCredentials([usernamePassword(credentialsId: 'dockerhub', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
+				withCredentials([usernamePassword(credentialsId: 'dockerhub', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
                 sh """
-				        docker build . -t lab22-image
-				        docker login -u ${USERNAME} -P ${PASSWORD}
-				        docker push lab22-image
-				        docker rmi lab22-image
-				        """
+				docker build . -t lab22-image
+				docker login -u ${USERNAME} -P ${PASSWORD}
+				docker push lab22-image
+				docker rmi lab22-image
+				"""
                 }
             }
         }
@@ -23,9 +23,9 @@ pipeline {
             steps {
                 script {
                     sh """
-					          sed -i 's|image: .*|image: ${DOCKER_IMAGE}|' ${DEPLOYMENT_FILE}
-					          kubectl apply -f ${DEPLOYMENT_FILE}
-					          """
+					sed -i 's|image: .*|image: ${DOCKER_IMAGE}|' ${DEPLOYMENT_FILE}
+					kubectl apply -f ${DEPLOYMENT_FILE}
+					"""
                 }
             }
         }
