@@ -1,34 +1,68 @@
 pipeline {
     agent any
 
+    environment {
+        DOCKER_IMAGE = "your-dockerhub-username/lab22-image:latest"  // This will be updated dynamically
+        DEPLOYMENT_FILE = "k8s/deployment.yaml"
+    }
+
     stages {
         stage('Clone Repository') {
             steps {
-                git 'https://github.com/IbrahimAdell/App1.git'
-            }
-        }
-        stage('Docker image') {
-            steps {
-				withCredentials([usernamePassword(credentialsId: 'dockerhub', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
-                sh """
-				docker build . -t lab22-image
-				docker login -u ${USERNAME} -P ${PASSWORD}
-				docker push lab22-image
-				docker rmi lab22-image
-				"""
-                }
-            }
-        }
-        stage(' Deployment on k8s ') {
-            steps {
                 script {
                     sh """
-					sed -i 's|image: .*|image: ${DOCKER_IMAGE}|' ${DEPLOYMENT_FILE}
-					kubectl apply -f ${DEPLOYMENT_FILE}
-					"""
+                    if [ ! -d "App1" ]; then
+                        git clone https://github.com/IbrahimAdell/App1.git
+                    else
+                        cd App1 && git pull
+                    fi
+                    """
                 }
             }
         }
-	}
-	
+
+        stage('Docker Image Build & Push') {
+            steps {
+                withCredentials([usernamePassword(credentialsId: 'dockerhub', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
+                    script {
+                        env.DOCKER_IMAGE = "${USERNAME}/lab22-image:latest"  // Dynamically assign username
+                        sh """
+                        set -e  # Stop on first error
+                        docker build -t ${env.DOCKER_IMAGE} App1
+                        echo ${PASSWORD} | docker login -u ${USERNAME} --password-stdin
+                        docker push ${env.DOCKER_IMAGE}
+                        docker rmi ${env.DOCKER_IMAGE}
+                        """
+                    }
+                }
+            }
+        }
+
+        stage('Deploy to Kubernetes') {
+            steps {
+                withCredentials([usernamePassword(credentialsId: 'kubeconfig', usernameVariable: 'KUBE_USERNAME', passwordVariable: 'KUBE_PASSWORD')]) {
+                    script {
+                        sh """
+                        set -e
+                        sed -i 's|image: .*|image: ${env.DOCKER_IMAGE}|' ${env.DEPLOYMENT_FILE}
+                        kubectl apply -f ${env.DEPLOYMENT_FILE} || (echo "Kubernetes deployment failed!" && exit 1)
+                        kubectl rollout status deployment/lab22-app --timeout=60s || (echo "Deployment verification failed!" && exit 1)
+                        """
+                    }
+                }
+            }
+        }
+    }
+
+    post {
+        always {
+            echo 'Pipeline execution completed!'
+        }
+        success {
+            echo 'Deployment was successful!'
+        }
+        failure {
+            echo 'Deployment failed! Check logs for details.'
+        }
+    }
 }
