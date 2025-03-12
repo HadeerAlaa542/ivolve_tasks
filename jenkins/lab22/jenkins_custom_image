@@ -20,6 +20,12 @@ RUN echo \
 # Install Docker CLI
 RUN apt-get update && apt-get install -y docker-ce-cli
 
+# Accept the Docker group ID as a build argument
+ARG DOCKER_GID=984 
+
+# Create the Docker group with the same ID as the host and add Jenkins to it
+RUN groupadd -g $DOCKER_GID docker && usermod -aG docker jenkins
+
 # Clean up to reduce image size
 RUN apt-get clean && rm -rf /var/lib/apt/lists/*
 
