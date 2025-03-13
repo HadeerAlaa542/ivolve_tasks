@@ -1,1 +1,59 @@
+pipeline {
+    agent any
+    environment {
+        DEPLOYMENT_FILE = "deployment.yaml"
+        K8S_REMOTE_SERVER = "13.216.214.97"
+        K8S_USER = "ec2-user"
+        DOCKER_IMAGE = "hadeeralaa542/lab22-image:v1.0"
+    }
 
+    stages {
+        stage('Clone Repository') {
+            steps {
+                git url: 'https://github.com/IbrahimAdell/App1.git', branch: 'main'
+            }
+        }
+
+        stage('Docker image Build & Push') {
+            steps {
+                withCredentials([usernamePassword(credentialsId: 'dockerhub', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
+                    sh """
+                    docker build . -t ${USERNAME}/lab22-image:v1.0
+                    docker login -u ${USERNAME} -p ${PASSWORD}
+                    docker push ${USERNAME}/lab22-image:v1.0
+                    docker rmi ${USERNAME}/lab22-image:v1.0
+                    """
+                }
+            }
+        }
+        stage('Update Deployment File') {
+            steps {
+                sh """
+                sed -i 's|image: .*|image: ${DOCKER_IMAGE}|' ${DEPLOYMENT_FILE}
+                """
+            }
+        }
+        stage('Deploy to Kubernetes') {
+            steps {
+                withCredentials([sshUserPrivateKey(credentialsId: 'k8s-ssh', keyFileVariable: 'SSH_KEY')]) {
+                sh """
+                chmod 600 $SSH_KEY
+                scp -o StrictHostKeyChecking=no -i $SSH_KEY ${DEPLOYMENT_FILE} ${K8S_USER}@${K8S_REMOTE_SERVER}:/home/${K8S_USER}/
+                ssh -o StrictHostKeyChecking=no -i $SSH_KEY ${K8S_USER}@${K8S_REMOTE_SERVER} "kubectl apply -f /home/${K8S_USER}/${DEPLOYMENT_FILE}"
+                """
+                }
+            }
+        }
+    }
+    post {
+        always {
+            echo 'Pipeline execution completed!'
+        }
+        success {
+            echo 'Deployment was successful!'
+        }
+        failure {
+            echo 'Deployment failed!'
+        }
+    }
+}
