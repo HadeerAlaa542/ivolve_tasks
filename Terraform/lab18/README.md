@@ -6,7 +6,7 @@ This lab demonstrates the use of Terraform to deploy an AWS infrastructure with 
 
 ### Architecture Diagram
 
-![image](https://github.com/user-attachments/assets/8a47005b-9e79-4158-9741-d88973ab6a04)
+<img width="467" alt="image" src="https://github.com/user-attachments/assets/8ee11b5e-fd94-4723-a27e-e8afaa4acd6e" />
 
 ## Prerequisites
 
