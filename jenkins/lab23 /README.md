@@ -109,7 +109,7 @@ pipeline {
 
   ![image](https://github.com/user-attachments/assets/55f4973c-e15b-404c-adb9-27678a362c22)
 
-- check the imade on DockerHub
+- check the image on DockerHub
   
   <img width="725" alt="image" src="https://github.com/user-attachments/assets/ebebff19-ceef-402c-8d17-8cd7c9de783d" />
   
