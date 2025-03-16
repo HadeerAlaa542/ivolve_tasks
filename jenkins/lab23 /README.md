@@ -118,6 +118,9 @@ pipeline {
   kubectl get pods
   kubectl get services
   ```
+  <img width="772" alt="image" src="https://github.com/user-attachments/assets/eb8c3bcc-378d-4023-804f-0be9221c18d5" />
+
+  <img width="395" alt="image" src="https://github.com/user-attachments/assets/a05b00d2-b605-479e-a63a-80da1ca18940" />
 
 ## Conclusion
 This lab demonstrates how to set up a Jenkins slave, create a shared library, and use it in different pipelines for modular and reusable automation.
