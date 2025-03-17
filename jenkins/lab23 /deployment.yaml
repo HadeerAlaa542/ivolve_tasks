@@ -15,7 +15,7 @@ spec:
       containers:
         - name: app1-container
           image: hadeeralaa542/lab22-image:v1.0
-          command: ["/bin/sh", "-c", "echo 'Hello, welcome to iVolve training!'; sleep 99999999"]
+          command: ["/bin/sh", "-c", "echo 'Hello'; sleep 99999999"]
           ports:
             - containerPort: 80
 ---
