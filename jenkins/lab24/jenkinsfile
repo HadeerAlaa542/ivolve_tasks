@@ -43,7 +43,10 @@ pipeline {
         stage('Deploy to Kubernetes') {
             steps {
                 script {
-                    def namespace = namespaceMap.get(env.BRANCH_NAME, 'dev') // Default to 'dev' if branch is unknown
+                    def namespace = namespaceMap[env.BRANCH_NAME]
+                    if (!namespace) {
+                        error "Branch '${env.BRANCH_NAME}' is not mapped to any namespace. Deployment aborted!"
+                    }
                     DeployOnKubernetes(K8S_CRED_ID, DOCKER_REGISTRY, DOCKER_IMAGE, DEPLOYMENT, namespace)
                 }
             }
