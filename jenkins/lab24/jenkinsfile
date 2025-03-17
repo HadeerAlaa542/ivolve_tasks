@@ -25,14 +25,6 @@ pipeline {
                 }
             }
         }
-        stage('Build Maven Project') {
-            steps {
-                script {
-                    sh 'mvn clean package -DskipTests' // Build the JAR file
-                }
-            }
-        }
-
         stage('Manage Docker Image') {
             steps {
                 script {
