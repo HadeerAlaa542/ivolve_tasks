@@ -12,7 +12,7 @@ pipeline {
         DOCKER_REGISTRY = "hadeeralaa542"
         DOCKER_IMAGE = "app3"
         DOCKERHUB_CRED_ID = "dockerhub"
-        K8S_CRED_ID = 'kube'
+        K8S_CRED_ID = 'kube-config'
         DEPLOYMENT = 'deployment.yaml'
     }
 
