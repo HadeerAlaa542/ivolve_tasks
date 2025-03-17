@@ -21,7 +21,11 @@ In this lab, we will set up a Jenkins slave to execute a CI/CD pipeline and use 
 
 ## Steps
 
-### Step 1: Configure Jenkins Slave
+### Step 1: Configure credentials for DockerHub , jenkins slave , k8s cluster.
+
+<img width="923" alt="image" src="https://github.com/user-attachments/assets/ba6b8f9f-933a-44ab-bfc0-0ca332de91a0" />
+
+### Step 2: Configure Jenkins Slave
 1. Launch a new node in Jenkins:
    - Navigate to **Manage Jenkins** > **Manage Nodes and Clouds**.
    - Click **New Node**.
@@ -36,7 +40,7 @@ In this lab, we will set up a Jenkins slave to execute a CI/CD pipeline and use 
 
    <img width="928" alt="image" src="https://github.com/user-attachments/assets/9ea8bc6f-d20b-4cdb-ac9c-22e80f2498d8" />
 
-### Step 2: Create a Jenkins Shared Library
+### Step 3: Create a Jenkins Shared Library
 1. Navigate to Jenkins and go to **Manage Jenkins** > **Configure System**.
 2. Under **Global Pipeline Libraries**, add a new library with:
    - **Name**: `jenkins-shared-lib`
@@ -46,11 +50,11 @@ In this lab, we will set up a Jenkins slave to execute a CI/CD pipeline and use 
      
      <img width="412" alt="image" src="https://github.com/user-attachments/assets/70d21afc-ce11-4498-8ba7-c5a89d754120" />
 
-### Step 3: Define Shared Library Functions 
+### Step 4: Define Shared Library Functions 
 - Create a new repository for the shared library and define Groovy functions for pipeline tasks:
 - This is the linke of the Repo: https://github.com/HadeerAlaa542/jenkins-shared-library
 
-### Step 4: Create the Jenkins Pipeline
+### Step 5: Create the Jenkins Pipeline
 ```groovy
 @Library('jenkins-shared-library')_
 pipeline {
@@ -103,7 +107,7 @@ pipeline {
 }
 ```
 
-### Step 5: Run and Verify the Pipeline
+### Step 6: Run and Verify the Pipeline
 - Save the pipeline script in Jenkins.
 - Run the pipeline and verify that each stage executes successfully on the Jenkins slave.
 
