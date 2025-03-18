@@ -11,6 +11,8 @@ This lab focuses on setting up a MultiBranch Pipeline in Jenkins to automate dep
 - Docker installed on the Jenkins slave for building images
 - Kubernetes CLI (`kubectl`) installed
 - Jenkins Shared Library setup
+  
+  <img width="959" alt="image" src="https://github.com/user-attachments/assets/bdca6cef-f4f7-49de-98ab-bcaa0e0af98d" />
 
 ## Steps
 
