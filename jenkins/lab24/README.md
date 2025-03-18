@@ -53,16 +53,15 @@ kubectl create namespace dev
 - Navigate to Jenkins → New Item → MultiBranch Pipeline.
 - Configure the repository URL to your GitHub repo.
 - Define a `Jenkinsfile` to automate deployment.
-  
+
+![image](https://github.com/user-attachments/assets/d7dd4a63-04fc-4eca-9893-110820d6b857)  
 ![image](https://github.com/user-attachments/assets/57d170f1-debe-4ad1-839e-ce77887f6253)
-![image](https://github.com/user-attachments/assets/dbd49915-4ca0-431f-8e67-2a67cca36899)
 
 ### 7. Create a Jenkins Slave on AWS EC2
 - Launch an EC2 instance and configure it as a Jenkins agent.
 - Install open jdk , Docker and `kubectl` on the instance.
 - Connect the agent to Jenkins.
-  
-![image](https://github.com/user-attachments/assets/79089fc7-45ff-44e6-ae20-86539b975748)
+![image](https://github.com/user-attachments/assets/dbd49915-4ca0-431f-8e67-2a67cca36899)  
 
 ### 8. Use a Shared Library
 - Define a Shared Library for common deployment logic.
