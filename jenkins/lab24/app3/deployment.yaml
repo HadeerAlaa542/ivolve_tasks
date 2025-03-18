@@ -16,6 +16,7 @@ spec:
       containers:
         - name: app3
           image: REPLACE_IMAGE  # This will be replaced dynamically
+          command: ["/bin/sh", "-c", "echo 'Hello'; sleep 99999999"]
           ports:
             - containerPort: 80
 ---
