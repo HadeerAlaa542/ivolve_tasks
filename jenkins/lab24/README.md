@@ -12,7 +12,7 @@ This lab focuses on setting up a MultiBranch Pipeline in Jenkins to automate dep
 - Kubernetes CLI (`kubectl`) installed
 - Jenkins Shared Library setup
   
-  <img width="959" alt="image" src="https://github.com/user-attachments/assets/bdca6cef-f4f7-49de-98ab-bcaa0e0af98d" />
+<img width="959" alt="image" src="https://github.com/user-attachments/assets/bdca6cef-f4f7-49de-98ab-bcaa0e0af98d" />
 
 ## Steps
 
@@ -61,6 +61,7 @@ kubectl create namespace dev
 - Launch an EC2 instance and configure it as a Jenkins agent.
 - Install open jdk , Docker and `kubectl` on the instance.
 - Connect the agent to Jenkins.
+
 ![image](https://github.com/user-attachments/assets/dbd49915-4ca0-431f-8e67-2a67cca36899)  
 
 ### 8. Use a Shared Library
