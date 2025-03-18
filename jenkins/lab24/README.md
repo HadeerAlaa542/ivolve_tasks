@@ -54,26 +54,26 @@ kubectl create namespace dev
 - Configure the repository URL to your GitHub repo.
 - Define a `Jenkinsfile` to automate deployment.
   
-  ![image](https://github.com/user-attachments/assets/57d170f1-debe-4ad1-839e-ce77887f6253)
-  ![image](https://github.com/user-attachments/assets/dbd49915-4ca0-431f-8e67-2a67cca36899)
+![image](https://github.com/user-attachments/assets/57d170f1-debe-4ad1-839e-ce77887f6253)
+![image](https://github.com/user-attachments/assets/dbd49915-4ca0-431f-8e67-2a67cca36899)
 
 ### 7. Create a Jenkins Slave on AWS EC2
 - Launch an EC2 instance and configure it as a Jenkins agent.
 - Install open jdk , Docker and `kubectl` on the instance.
 - Connect the agent to Jenkins.
   
-  ![image](https://github.com/user-attachments/assets/79089fc7-45ff-44e6-ae20-86539b975748)
+![image](https://github.com/user-attachments/assets/79089fc7-45ff-44e6-ae20-86539b975748)
 
 ### 8. Use a Shared Library
 - Define a Shared Library for common deployment logic.
 - Integrate the library into the `Jenkinsfile`.
 
-  ![image](https://github.com/user-attachments/assets/7cfbe871-4c9f-41df-ba96-eda5bc17afea)
+![image](https://github.com/user-attachments/assets/c4b4fc36-5d71-4049-9b67-bdf6775114ed)
 
 ### 9. Run the Pipeline
 
+![image](https://github.com/user-attachments/assets/7cfbe871-4c9f-41df-ba96-eda5bc17afea)
 ![image](https://github.com/user-attachments/assets/731de297-601f-4f93-9fa0-efcfe57a54ac)
-![image](https://github.com/user-attachments/assets/fb51c1db-3a34-4943-be7f-b2966aac5946)
 
 ### 10. Verification 
 1- check the image on DockerHub
