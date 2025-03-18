@@ -83,7 +83,8 @@ kubectl create namespace dev
 
 2-Confirm that the application is deployed to Kubernetes
 
-![image](https://github.com/user-attachments/assets/8ae0f0a3-f520-44c3-b9a2-43fb6d54d45b)
+![image](https://github.com/user-attachments/assets/e676ed07-e77d-4825-9f0d-a371e231fd72)
+
 ![image](https://github.com/user-attachments/assets/f5e58608-ac0b-4842-a866-b169c35df2c1)
 
 ## Conclusion
