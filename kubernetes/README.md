@@ -135,6 +135,8 @@ If you need to roll back to the previous version:
 ```bash
 kubectl rollout undo deployment/nginx-deployment
 ```
+<img width="409" alt="image" src="https://github.com/user-attachments/assets/57297758-8d2a-471d-af22-b823b891e9dd" />
+
 Check the status:
 ```bash
 kubectl rollout status deployment/nginx-deployment
