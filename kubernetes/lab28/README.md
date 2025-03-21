@@ -47,7 +47,7 @@ echo "hello iVolve" > /usr/share/nginx/html/hello.txt
 ```
 ![image](https://github.com/user-attachments/assets/b90aaf85-9b9d-4a4c-b045-f7cee97d23d3)
 
-![image](https://github.com/user-attachments/assets/49b5b997-e9fc-46c0-a072-920d9f6e2df5)
+![image](https://github.com/user-attachments/assets/05060ca0-7094-4531-8e39-9cfe36dc9588)
 
 ### 3. Verify the File
 Exit the pod and run:
