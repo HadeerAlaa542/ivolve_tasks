@@ -95,19 +95,22 @@ kubectl apply -f pvc.yaml
 ![image](https://github.com/user-attachments/assets/6cbe06ec-d4aa-4e7a-a593-3961e6b0051a)
 
 ### 6. Modify the Deployment to Use PVC
-Update the deployment YAML:
+Modify the spec section inside containers:
 ```yaml
-spec:
-  volumes:
-    - name: nginx-storage
-      persistentVolumeClaim:
-        claimName: nginx-pvc
-  containers:
-    - name: nginx
-      image: nginx:latest
-      volumeMounts:
+    spec:
+      containers:
+      - name: nginx
+        image: nginx
+        ports:
+        - containerPort: 80
+        volumeMounts:
         - mountPath: /usr/share/nginx/html
           name: nginx-storage
+      volumes:
+      - name: nginx-storage
+        persistentVolumeClaim:
+          claimName: nginx-pvc
+
 ```
 Apply the changes:
 ```sh
