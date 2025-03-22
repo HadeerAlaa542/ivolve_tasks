@@ -171,9 +171,9 @@ This ensures the cluster is clean after completing the lab.
 | Feature           | Role & RoleBinding | ClusterRole & ClusterRoleBinding |
 |------------------|------------------|------------------------------|
 | Scope            | Namespace-level  | Cluster-wide                 |
-| Permissions      | Limited to a namespace | Applies to all namespaces  |
-| Use Case         | Restrict access to specific namespace resources | Grant global access across the cluster |
-| Example Resource | Role, RoleBinding | ClusterRole, ClusterRoleBinding |
+| Permissions      | Can grant access to resources within a namespace | Can grant access to resources across the entire cluster  |
+| Use Case         | Restrict access to specific namespace resources | Grant permissions for cluster-wide resources like nodes, storage, etc. |
+| Example Resource | Read-only access to pods in default namespace | Read-only access to all pods in all namespaces |
 
 ---
 
