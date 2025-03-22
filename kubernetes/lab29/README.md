@@ -134,6 +134,37 @@ Output:
 
 ---
 
+## Verification
+
+### 1. Verify Role Creation
+```bash
+kubectl describe role pod-reader
+```
+Output:
+
+<img width="375" alt="image" src="https://github.com/user-attachments/assets/3cc5331b-5ed5-4ae1-9fde-375cad898a0d" />
+
+### 2. Verify Role Binding
+
+Check details:
+```bash
+kubectl describe rolebinding pod-reader-binding
+```
+
+Output:
+
+<img width="452" alt="image" src="https://github.com/user-attachments/assets/07d3b66f-fccf-471a-91ca-a799fdcffd56" />
+
+
+## Cleanup
+To remove all created resources, run:
+```bash
+kubectl delete serviceaccount pod-reader-sa
+kubectl delete role pod-reader
+kubectl delete rolebinding pod-reader-binding
+```
+This ensures the cluster is clean after completing the lab.
+
 
 ## **Comparison: Role vs. ClusterRole**
 | Feature          | Role                                      | ClusterRole                               |
