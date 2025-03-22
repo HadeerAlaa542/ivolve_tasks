@@ -167,16 +167,13 @@ This ensures the cluster is clean after completing the lab.
 
 
 ## **Comparison: Role vs. ClusterRole**
-| Feature          | Role                                      | ClusterRole                               |
-|-----------------|-----------------------------------------|------------------------------------------|
-| Scope          | Namespace-specific                      | Cluster-wide                             |
-| Resources      | Can only grant permissions within a namespace | Can grant permissions across all namespaces |
-| Use Case      | Restrict access within a namespace       | Grant global permissions                |
 
-| Feature           | RoleBinding                             | ClusterRoleBinding                       |
-|------------------|----------------------------------------|-----------------------------------------|
-| Scope           | Binds a Role to a Service Account within a namespace | Binds a ClusterRole to a Service Account across the cluster |
-| Use Case       | Assigns permissions in a namespace       | Assigns cluster-wide permissions       |
+| Feature           | Role & RoleBinding | ClusterRole & ClusterRoleBinding |
+|------------------|------------------|------------------------------|
+| Scope            | Namespace-level  | Cluster-wide                 |
+| Permissions      | Limited to a namespace | Applies to all namespaces  |
+| Use Case         | Restrict access to specific namespace resources | Grant global access across the cluster |
+| Example Resource | Role, RoleBinding | ClusterRole, ClusterRoleBinding |
 
 ---
 
